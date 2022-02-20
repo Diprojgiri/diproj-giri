@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.main {
+  width: 100%;
+  background-image: url(backgrounf.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  height: 109vh;
+}
+.logo {
+  float: left;
+  padding: 11px;
+  text-transform: uppercase;
+}
+.nav-bar {
+  width: 100%;
+  padding: 11px;
+  background: rgb(30, 69, 95);
+  float: right;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar nav {
+  position: relative;
+  width: 50%;
+  height: 39px;
+  display: flex;
+
+  float: right;
+}
+.nav-bar nav label {
+  display: block;
+  height: 60;
+  width: 20%;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  color: #17a2b8;
+  font-size: 17px;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+.nav-bar nav label:hover {
+  background: rgba(23, 162, 184, 0.3);
+}
+#home:checked ~ nav label.home,
+#blog:checked ~ nav label.blog,
+#code:checked ~ nav label.code,
+#help:checked ~ nav label.help,
+#about:checked ~ nav label.about {
+  color: #fff;
+}
+nav label i {
+  padding-right: 5px;
+}
+nav .slider {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 5px;
+  background: #17a2b8;
+  transition: all 0.3s ease;
+}
+input[type="radio"] {
+  display: none;
+}
+#blog:checked ~ nav .slider {
+  left: 20%;
+}
+#code:checked ~ nav .slider {
+  left: 40%;
+}
+#help:checked ~ nav .slider {
+  left: 60%;
+}
+#about:checked ~ nav .slider {
+  left: 80%;
+}
