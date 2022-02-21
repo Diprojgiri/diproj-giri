@@ -7,7 +7,7 @@
 }
 .main {
   width: 100%;
-  background-image: url(backgrounf.jpg);
+  background-image: url(01.jpg);
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   background-position: center;
@@ -88,4 +88,341 @@ input[type="radio"] {
 }
 #about:checked ~ nav .slider {
   left: 80%;
+}
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+.home {
+  width: 100%;
+  background-image: url(01.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  height: 109vh;
+}
+nav {
+  background: transparent;
+  padding: 5px 40px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li {
+  padding: 15px 0;
+  cursor: pointer;
+}
+nav ul li.items {
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+}
+nav ul li.items:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: #33ffff;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+nav ul li.items:hover:after {
+  opacity: 1;
+  bottom: 8px;
+}
+nav ul li.logo {
+  flex: 1;
+  color: white;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+}
+nav ul li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+nav ul li:hover a {
+  color: cyan;
+}
+nav ul li i {
+  font-size: 23px;
+}
+nav ul li.btn {
+  display: none;
+}
+nav ul li.btn.hide i:before {
+  content: "\f00d";
+}
+@media screen and (max-width: 900px) {
+  nav {
+    padding: 5px 30px;
+  }
+  nav ul li.items {
+    width: 100%;
+    display: none;
+  }
+  nav ul li.items.show {
+    display: block;
+  }
+  nav ul li.btn {
+    display: block;
+  }
+  nav ul li.items:hover {
+    border-radius: 5px;
+
+    box-shadow: inset 0 0 5px #33ffff, inset 0 0 10px #66ffff;
+  }
+  nav ul li.items:hover:after {
+    opacity: 0;
+  }
+}
+.about {
+  width: 100%;
+  background: #1b2631;
+  background-position: center;
+  display: grid;
+  background-size: cover;
+  height: 109vh;
+  transition: 0.4s;
+}
+
+/*about*/
+
+::selection {
+  color: #fff;
+  background: #060f35;
+}
+.wrapper {
+  height: 400px;
+  width: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  place-items: center;
+  align-items: center;
+  display: flex;
+  padding-top: 250px;
+  margin-left: 35%;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+.wrapper .card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.wrapper:hover > .front-face {
+  transform: rotateY(-180deg);
+}
+.wrapper .card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.wrapper .back-face {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.wrapper:hover > .back-face {
+  transform: rotateY(0deg);
+}
+.wrapper .back-face img {
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #060f35, #171515);
+}
+.wrapper .back-face .info {
+  text-align: center;
+}
+.back-face .info .title {
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-face ul {
+  display: flex;
+}
+.back-face ul a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: #262626;
+  background: linear-gradient(375deg, #060f35, #171515);
+  transition: all 0.5s ease;
+}
+.back-face ul a:hover {
+  color: #060f35;
+  border-color: #171515;
+  background: linear-gradient(375deg, transparent, transparent);
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    height: 400px;
+    width: 300px;
+    place-items: center;
+    align-items: center;
+    display: flex;
+    padding-top: 250px;
+    margin-left: 110px;
+  }
+}
+/*end of about*/
+/*blog*/
+.herocontainer {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  background: #2c3e50;
+}
+*/
+/*H1 properties*/
+#hero h1 {
+  display: block;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1ss;
+}
+
+@media screen and (max-width: 600px) {
+  #hero h1 {
+    font-size: 1rem;
+    font-weight: 400rem;
+  }
+}
+/* end of blog*/
+/*contact*/
+.contact {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  place-items: center;
+  align-items: left;
+  justify-content: center;
+  background: #283747;
+}
+a {
+  text-decoration: none;
+  color: #171515;
+}
+.contact .button {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+}
+.contact .button:hover {
+  width: 200px;
+}
+.contact .button .icon {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.contact .button:nth-child(1):hover .icon {
+  background: #4267b2;
+}
+.contact .button:nth-child(2):hover .icon {
+  background: #275f81;
+}
+.contact .button:nth-child(3):hover .icon {
+  background: #e1306c;
+}
+.contact .button:nth-child(4):hover .icon {
+  background: #333;
+}
+.contact .button:nth-child(5):hover .icon {
+  background: #ff0000;
+}
+.contact .button .icon i {
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.contact .button:hover .icon i {
+  color: #fff;
+}
+.contact .button span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+.contact .button:nth-child(1) span {
+  color: #4267b2;
+}
+.contact .button:nth-child(2) span {
+  color: #1da1f2;
+}
+.contact .button:nth-child(3) span {
+  color: #e1306c;
+}
+.contact .button:nth-child(4) span {
+  color: #333;
+}
+.contact .button:nth-child(5) span {
+  color: #ff0000;
+}
+@media screen and (max-width: 300px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact .button .icon {
+    display: block;
+  }
 }

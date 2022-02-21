@@ -1,35 +1,115 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home page</title>
-    <link rel="stylesheet" href="index.css" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  </head>
-  <body>
-    <div class="main">
-      <div class="nav-bar">
-        <div class="logo">diproj</div>
-        <input type="radio" name="slider" checked id="home" />
-        <input type="radio" name="slider" id="blog" />
-        <input type="radio" name="slider" id="code" />
-        <input type="radio" name="slider" id="help" />
-        <input type="radio" name="slider" id="about" />
-        <nav>
-          <label for="home" class="home"><i class="fas fa-home"></i>Home</label>
-          <label for="blog" class="blog"><i class="fas fa-blog"></i>Blog</label>
-          <label for="code" class="code"><i class="fas fa-code"></i>Code</label>
-          <label for="help" class="help"
-            ><i class="far fa-envelope"></i>Help</label
-          >
-          <label for="about" class="about"
-            ><i class="far fa-user"></i>About</label
-          >
-          <div class="slider"></div>
-        </nav>
-      </div>
+<head>
+   <meta charset="utf-8">
+   <title>Diproj' website</title>
+   <link rel="stylesheet" href="index.css">
+   
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <script src="index.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  
+  <!--navigation bar-->
+  <section id="first">
+  <div class="home">
+   <nav>
+      <ul>
+         <li class="logo">DipRoj</li>
+         <li class="items"><a href="#first">Home</a></li>
+         <li class="items"><a href="#second">About</a></li>
+         <li class="items"><a href="#hero">Blogs</a></li>
+         <li class="items"><a href="#fourth">Contact</a></li>
+         
+         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+   </nav>
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script> </div>
+    </section>
+    <!-- end ofnavigation bar-->
+  
+      <!--about-->
+      <section id="second">
+   <div class="about"><div class="wrapper">
+    <div class="card front-face">
+       <img src="profile.jpg">
     </div>
-  </body>
+    <div class="card back-face">
+       <img src="profile.jpg">
+       <div class="info">
+          <div class="title">
+             Diproj Giri
+          </div>
+          <p>
+             Student  and <br>front-end developer
+          </p>
+       </div>
+       <ul>
+          <a href="https://www.facebook.com/dip.roj.94/"><i class="fab fa-facebook-f"></i></a>
+        
+          <a href="https://www.instagram.com/roj.dip/"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/Diprojgiri"><i class="fab fa-github"></i></a>
+       </ul>
+    </div>
+ </div></div></section>
+    <!--end of about-->
+    <!--blog--><section id="hero">
+        <div class="herocontainer">
+          <div>
+              <h1>Hello everyone!!!<span></span></h1>
+              <h1>My name is Diproj Giri. <span></span> </h1>
+              <h1> I am from NEPAL(BUTWAL).<span></span></h1>
+             <h1> I am currently studing in grade 11. </h1>
+             
+          </div>
+          </div>
+      </section>
+        <!-- end ofblog-->
+   <!--contact-->
+   <section id="fourth">
+   
+      <div class="contact">
+         <div class="button">
+           <div class="icon">
+             <i class="fab fa-facebook-f"></i></a>
+           </div>
+           <a href="https://www.facebook.com/dip.roj.94/"><span>Facebook</span></a>
+         </div>
+         <div class="button">
+          <div class="icon">
+           <a href="#"> <i class="fas fa-envelope"></i>
+          </div>
+          <span>Gmail</span></a>
+        </div>
+         <div class="button">
+           <div class="icon">
+            <a href="https://www.instagram.com/roj.dip/"><i class="fab fa-instagram"></i>
+           </div>
+           <span>Instagram</span></a>
+         </div>
+         <div class="button">
+           <div class="icon">
+            <a href="https://github.com/Diprojgiri"><i class="fab fa-github"></i>
+           </div>
+           <span>Github</span></a>
+         </div>
+         <div class="button">
+           <div class="icon">
+             <i class="fab fa-youtube"></i>
+           </div>
+           <span>YouTube</span>
+         </div>
+       </div>
+       
+</section>
+     <!-- end of contact-->
+</body>
 </html>
