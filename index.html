@@ -1,115 +1,175 @@
 <!DOCTYPE html>
-<head>
-   <meta charset="utf-8">
-   <title>Diproj' website</title>
-   <link rel="stylesheet" href="index.css">
-   
-   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-   <script src="index.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  
-  <!--navigation bar-->
-  <section id="first">
-  <div class="home">
-   <nav>
-      <ul>
-         <li class="logo">DipRoj</li>
-         <li class="items"><a href="#first">Home</a></li>
-         <li class="items"><a href="#second">About</a></li>
-         <li class="items"><a href="#hero">Blogs</a></li>
-         <li class="items"><a href="#fourth">Contact</a></li>
-         
-         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
-      </ul>
-   </nav>
-   <script>
-      $(document).ready(function(){
-        $('.btn').click(function(){
-          $('.items').toggleClass("show");
-          $('ul li').toggleClass("hide");
-        });
-      });
-   </script> </div>
-    </section>
-    <!-- end ofnavigation bar-->
-  
-      <!--about-->
-      <section id="second">
-   <div class="about"><div class="wrapper">
-    <div class="card front-face">
-       <img src="profile.jpg">
-    </div>
-    <div class="card back-face">
-       <img src="profile.jpg">
-       <div class="info">
-          <div class="title">
-             Diproj Giri
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- ===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+      
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<title>Diproj's website</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-bar">
+        <i class="bx bx-menu sidebarOpen"></i>
+        <span class="logo navLogo"><a href="#">Dip Roj</a></span>
+
+        <div class="menu">
+          <div class="logo-toggle">
+            <span class="logo"><a href="#">Dip Roj</a></span>
+            <i class="bx bx-x siderbarClose"></i>
           </div>
-          <p>
-             Student  and <br>front-end developer
-          </p>
-       </div>
-       <ul>
-          <a href="https://www.facebook.com/dip.roj.94/"><i class="fab fa-facebook-f"></i></a>
-        
-          <a href="https://www.instagram.com/roj.dip/"><i class="fab fa-instagram"></i></a>
-          <a href="https://github.com/Diprojgiri"><i class="fab fa-github"></i></a>
-       </ul>
-    </div>
- </div></div></section>
-    <!--end of about-->
-    <!--blog--><section id="hero">
-        <div class="herocontainer">
-          <div>
-              <h1>Hello everyone!!!<span></span></h1>
-              <h1>My name is Diproj Giri. <span></span> </h1>
-              <h1> I am from NEPAL(BUTWAL).<span></span></h1>
-             <h1> I am currently studing in grade 11. </h1>
-             
-          </div>
-          </div>
-      </section>
-        <!-- end ofblog-->
-   <!--contact-->
-   <section id="fourth">
-   
-      <div class="contact">
-         <div class="button">
-           <div class="icon">
-             <i class="fab fa-facebook-f"></i></a>
-           </div>
-           <a href="https://www.facebook.com/dip.roj.94/"><span>Facebook</span></a>
-         </div>
-         <div class="button">
-          <div class="icon">
-           <a href="#"> <i class="fas fa-envelope"></i>
-          </div>
-          <span>Gmail</span></a>
+
+          <ul class="nav-links">
+            <li class="items"><a href="#">Home</a></li>
+            <li class="items"><a href="#about">About</a></li>
+            <li class="items"><a href="#Portfolio">Portfolio</a></li>
+            <li class="items"><a href="#">Services</a></li>
+            <li class="items"><a href="#contact">Contact</a></li>
+          </ul>
         </div>
-         <div class="button">
-           <div class="icon">
-            <a href="https://www.instagram.com/roj.dip/"><i class="fab fa-instagram"></i>
-           </div>
-           <span>Instagram</span></a>
+
+        <div class="darkLight-searchBox">
+          <div class="dark-light">
+            <i class="bx bx-moon moon"></i>
+            <i class="bx bx-sun sun"></i>
+          </div>
+
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+      if (getMode && getMode === "dark-mode") {
+        body.classList.add("dark");
+      }
+
+      // js code to toggle dark and light mode
+      modeToggle.addEventListener("click", () => {
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if (!body.classList.contains("dark")) {
+          localStorage.setItem("mode", "light-mode");
+        } else {
+          localStorage.setItem("mode", "dark-mode");
+        }
+      });
+
+      
+      //   js code to toggle sidebar
+      sidebarOpen.addEventListener("click", () => {
+        nav.classList.add("active");
+      });
+
+      body.addEventListener("click", (e) => {
+        let clickedElm = e.target;
+
+        if (
+          !clickedElm.classList.contains("sidebarOpen") &&
+          !clickedElm.classList.contains("menu")
+        ) {
+          nav.classList.remove("active");
+        }
+      });
+    </script>
+    <div class="home"></div>
+          <!--about-->
+          <section id="about">
+            <div class="about"><div class="face">
+             <div class="card front-face">
+                <img src="profile.jpg">
+             </div>
+             <div class="card back-face">
+                <img src="profile.jpg">
+                <div class="info">
+                   <div class="title">
+                      Diproj Giri
+                   </div>
+                   <p>
+                      Student  and <br>front-end developer
+                   </p>
+                </div>
+                <ul>
+                   <a href="https://www.facebook.com/dip.roj.94/"><i class="fab fa-facebook-f"></i></a>
+                 
+                   <a href="https://www.instagram.com/roj.dip/"><i class="fab fa-instagram"></i></a>
+                   <a href="https://github.com/Diprojgiri"><i class="fab fa-github"></i></a>
+                </ul>
+             </div>
+          </div></div></section>
+             <!--end of about-->
+             <!--blog-->
+             <section id="Portfolio">
+                 <div class="herocontainer">
+                   <div>
+                       <h1>Hello everyone!!!<span></span></h1>
+                       <h1>My name is Diproj Giri. <span></span> </h1>
+                       <h1> I am from NEPAL(BUTWAL).<span></span></h1>
+                      <h1> I am currently studing in grade 11. </h1>
+                      
+                   </div>
+                   </div>
+               </section>
+                 <!-- end ofblog-->
+            <!--contact-->
+            <section id="contact">
+                <div class="contact">
+            
+      <div class="wrapper">
+        <div class="button">
+          <div class="icon">
+            <a href="https://www.facebook.com/dip.roj.94/">  <i class="fab fa-facebook-f"></i>
+          </div>
+         <span>Facebook</span></a>
+        </div>
+        <div class="button">
+         <div class="icon">
+          <a href="#"> <i class="fas fa-envelope"></i>
          </div>
-         <div class="button">
-           <div class="icon">
-            <a href="https://github.com/Diprojgiri"><i class="fab fa-github"></i>
-           </div>
-           <span>Github</span></a>
-         </div>
-         <div class="button">
-           <div class="icon">
-             <i class="fab fa-youtube"></i>
-           </div>
-           <span>YouTube</span>
-         </div>
+         <span>Gmail</span></a>
        </div>
-       
-</section>
-     <!-- end of contact-->
-</body>
+        <div class="button">
+          <div class="icon">
+           <a href="https://www.instagram.com/roj.dip/"><i class="fab fa-instagram"></i>
+          </div>
+          <span>Instagram</span></a>
+        </div>
+        <div class="button">
+          <div class="icon">
+           <a href="https://github.com/Diprojgiri"><i class="fab fa-github"></i>
+          </div>
+          <span>Github</span></a>
+        </div>
+        <div class="button">
+          <div class="icon">
+            <i class="fab fa-youtube"></i>
+          </div>
+          <span>YouTube</span>
+        </div>
+    </div> 
+         </section>
+              <!-- end of contact-->
+  </body>
 </html>
