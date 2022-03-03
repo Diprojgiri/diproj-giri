@@ -16,17 +16,17 @@
       
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-<title>Diproj's website</title>
+
   </head>
   <body>
     <nav>
       <div class="nav-bar">
         <i class="bx bx-menu sidebarOpen"></i>
-        <span class="logo navLogo"><a href="#">Dip Roj</a></span>
+        <span class="logo navLogo"><a href="#"><button>Dip Roj</button></a></span>
 
         <div class="menu">
           <div class="logo-toggle">
-            <span class="logo"><a href="#">Dip Roj</a></span>
+            <span class="logo"><a href="#"><button>Dip Roj</button></a></span>
             <i class="bx bx-x siderbarClose"></i>
           </div>
 
@@ -34,7 +34,7 @@
             <li class="items"><a href="#">Home</a></li>
             <li class="items"><a href="#about">About</a></li>
             <li class="items"><a href="#Portfolio">Portfolio</a></li>
-            <li class="items"><a href="#">Services</a></li>
+            <li class="items"><a href="#scl-project">Scl project</a></li>
             <li class="items"><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -94,6 +94,21 @@
         }
       });
     </script>
+    <script>
+      
+      let navbar = document.querySelector('nav');
+         var scrollPrev = window.pageYOffset;
+         window.onscroll = function(){
+           var scrollCur = window.pageYOffset;
+           if(scrollPrev > scrollCur){
+             navbar.style.top = "0";
+           }else{
+             navbar.style.top = "-90px";
+         
+           }
+           scrollPrev = scrollCur;
+         }
+    </script>
     <div class="home"></div>
           <!--about-->
           <section id="about">
@@ -120,7 +135,7 @@
              </div>
           </div></div></section>
              <!--end of about-->
-             <!--blog-->
+             <!--portflio-->
              <section id="Portfolio">
                  <div class="herocontainer">
                    <div>
@@ -132,42 +147,62 @@
                    </div>
                    </div>
                </section>
-                 <!-- end ofblog-->
+                 <!-- end of portflio-->
+                 <section id="scl-project">
+                  <div class="scl">
+                  <div class="scl-project">
+                    <div class="item">
+                      <span class="text">Computer software and operating system.</span>
+                  <div class="color">    <a href="https://drive.google.com/drive/folders/14GKTX4GLoWyfVrAA1lnSUtt-9BOpeR2x"> <i class="fas solid fa-download"></i></a>
+                  </div></div>
+                    <div class="item">
+                      <span class="text">Project comming soon</span>
+                     <a href="#"> <i class="fas solid fa-download"></i></a>
+                    </div>
+                    <div class="item">
+                      <span class="text">Project comming soon</span>
+                     <a href="#"> <i class="fas solid fa-download"></i></a>
+                    </div>
+                    <div class="item">
+                      <span class="text">Project comming soon</span>
+                  <a href="#"> <i class="fas solid fa-download"></i></a>
+                    </div>
+                    <div class="item">
+                      <span class="text">Project comming soon</span>
+                      <a href="#"><i class="fa duotone fa-download"></i>  </a>                
+                      </div>
+                  </div>
+                </div>
+                 </section>
             <!--contact-->
             <section id="contact">
                 <div class="contact">
-            
-      <div class="wrapper">
-        <div class="button">
-          <div class="icon">
-            <a href="https://www.facebook.com/dip.roj.94/">  <i class="fab fa-facebook-f"></i>
-          </div>
-         <span>Facebook</span></a>
-        </div>
-        <div class="button">
-         <div class="icon">
-          <a href="#"> <i class="fas fa-envelope"></i>
-         </div>
-         <span>Gmail</span></a>
-       </div>
-        <div class="button">
-          <div class="icon">
-           <a href="https://www.instagram.com/roj.dip/"><i class="fab fa-instagram"></i>
-          </div>
-          <span>Instagram</span></a>
-        </div>
-        <div class="button">
-          <div class="icon">
-           <a href="https://github.com/Diprojgiri"><i class="fab fa-github"></i>
-          </div>
-          <span>Github</span></a>
-        </div>
-        <div class="button">
-          <div class="icon">
-            <i class="fab fa-youtube"></i>
-          </div>
-          <span>YouTube</span>
-        </div>
+                  <div class="wrapper">
+                    <div class="icon facebook">
+                   <div class="tooltip">
+                    <a href="https://www.facebook.com/dip.roj.94/">   Facebook
+                       </div>
+                       <span><i class="fab fa-facebook-f"></i></span></a>
+                    </div>
+                    <div class="icon twitter">
+                    <div class="tooltip">
+                          Twitter
+                       </div>
+                       <span><i class="fab fa-twitter"></i></span>
+                    </div>
+                    <div class="icon instagram">
+                       <div class="tooltip">
+                      <a href="https://www.instagram.com/roj.dip/">    Instagram
+                       </div>
+                       <span><i class="fab fa-instagram"></i></span></a>
+                    </div>
+                    <div class="icon github">
+                     <div class="tooltip">
+                      <a href="https://github.com/Diprojgiri">      Github
+                       </div>
+                       <span><i class="fab fa-github"></i></span></a> 
+                    </div>
+                    
     </div> 
          </section>
               <!-- end of contact-->
