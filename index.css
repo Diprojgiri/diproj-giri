@@ -297,146 +297,153 @@ body.dark .search-field i {
   background-size: cover;
   height: 109vh;
   transition: 0.4s;
+  align-items: center;
 }
 
 /*about*/
-
-::selection {
-  color: #fff;
-  background: #060f35;
+.about,
+.services,
+.skills,
+.teams,
+.contact,
+footer {
+  font-family: "Poppins", sans-serif;
 }
-.face {
-  height: 400px;
-  width: 320px;
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+section .title {
   position: relative;
-  transform-style: preserve-3d;
-  place-items: center;
-  align-items: center;
-  display: flex;
-  padding-top: 250px;
-  margin-left: 35%;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
-}
-.face .card {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  padding: 5px;
-  background: #fff;
-  border-radius: 10px;
-  transform: translateY(0deg);
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
-.face:hover > .front-face {
-  transform: rotateY(-180deg);
-}
-.face .card img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.face .back-face {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-  transform: rotateY(180deg);
-}
-.face:hover > .back-face {
-  transform: rotateY(0deg);
-}
-.face .back-face img {
-  height: 150px;
-  width: 150px;
-  padding: 5px;
-  border-radius: 50%;
-  background: linear-gradient(375deg, #060f35, #171515);
-}
-.face .back-face .info {
   text-align: center;
-}
-.back-face .info .title {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: "Ubuntu", sans-serif;
 }
-.back-face ul {
-  display: flex;
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  background: #111;
+  transform: translateX(-50%);
 }
-.back-face ul a {
-  display: block;
-  height: 40px;
-  width: 40px;
+section .title::after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  font-size: 20px;
+  color: crimson;
+  padding: 0 5px;
+  background: #1b2631;
+  transform: translateX(-50%);
+}
+
+/* about section styling */
+.about .title::after {
+  content: "who i am";
+}
+.about .about-content .left {
+  width: 45%;
+}
+.about .about-content .left img {
+  height: 385px;
+  width: 385px;
+  object-fit: cover;
+  padding-left: 20px;
+  border-radius: 15px;
+}
+.about .about-content .right {
+  width: 55%;
+}
+.about .about-content .right .text {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.about .about-content .right .text span {
+  color: crimson;
+}
+.about .about-content .right p {
+  text-align: justify;
+}
+.about .about-content .right a {
+  display: inline-block;
+  background: crimson;
   color: #fff;
-  text-align: center;
-  margin: 0 5px;
-  line-height: 38px;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  background: #262626;
-  background: linear-gradient(375deg, #060f35, #171515);
-  transition: all 0.5s ease;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
 }
-.back-face ul a:hover {
-  color: #060f35;
-  border-color: #171515;
-  background: linear-gradient(375deg, transparent, transparent);
+.about .about-content .right a:hover {
+  color: crimson;
+  background: none;
 }
-@media screen and (max-width: 750px) {
-  .face {
-    height: 250px;
-    width: 200px;
-    place-items: center;
-    align-items: center;
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+  .about .about-content .left img {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 991px) {
+  .max-width {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 947px) {
+  .max-width {
+    max-width: 930px;
+  }
+  .about .about-content .column {
+    width: 100%;
+  }
+  .about .about-content .left {
     display: flex;
-    padding-top: 50px;
-    margin-left: 50px;
+    justify-content: center;
+    margin: 0 auto 60px;
   }
-  .face .back-face img {
-    height: 100px;
-    width: 110px;
-    padding: 5px;
+  .about .about-content .right {
+    flex: 100%;
   }
-}
-/*end of about*/
-/*blog*/
-.herocontainer {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  place-items: center;
-  align-items: center;
-  justify-content: center;
-  background: #2c3e50;
-}
-*/
-  /*H1 properties*/
-  #Portfolio h1 {
-  display: block;
-  width: fit-content;
-  font-size: 4rem;
-  position: relative;
-  color: transparent;
-  animation: text_reveal 0.5s ease forwards;
-  animation-delay: 1ss;
+  .services .serv-content .card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+  .skills .contact .column {
+    width: 100%;
+    margin-bottom: 35px;
+  }
 }
 
-@media screen and (max-width: 600px) {
-  #Portfolio h1 {
-    font-size: 1rem;
-    font-weight: 400rem;
-  }
-
-  .wrapper .button {
-    display: -moz-inline-grid;
+@media (max-width: 690px) {
+  .max-width {
+    padding: 0 23px;
   }
 }
-/* end of blog*/
+
+@media (max-width: 500px) {
+  .about .about-content .right .text,
+  .left .text {
+    font-size: 19px;
+  }
+}
+
 /*contact*/
 .contact {
   display: flex;
